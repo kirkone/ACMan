@@ -51,10 +51,15 @@ namespace ACMan.Host.Services
             logger.LogInformation("Web App is stopped");
         }
 
-        private static IWebHost BuildWebHost() =>
+        private IWebHost BuildWebHost() =>
             WebHost.CreateDefaultBuilder()
             .UseContentRoot(Directory.GetParent(AppContext.BaseDirectory).FullName)
                 .UseStartup<ACMan.Web.Startup>()
+                .ConfigureLogging(
+                    logging => {
+                            logging.AddConfiguration(this.config.GetSection("Logging"));
+                        }
+                    )
                 .Build();
     }
 }

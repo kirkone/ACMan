@@ -20,4 +20,10 @@
     <ProjectReference Include="..\ACMan.Web\ACMan.Web.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+  <None Include="appsettings.json" CopyToOutputDirectory="PreserveNewest" />
+</ItemGroup>
+
+
+
 </Project>

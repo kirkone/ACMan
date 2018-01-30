@@ -28,7 +28,7 @@
         {
             // Add logging
             serviceCollection.AddSingleton(new LoggerFactory()
-                .AddConsole()
+                //.AddConsole()
                 .AddDebug());
             serviceCollection.AddLogging();
 
